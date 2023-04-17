@@ -25,6 +25,12 @@ test {
     useJUnitPlatform()
 }
 
+tasks.register('restTests', Test).configure(){
+    filter{
+        includeTestsMatching('rest*')
+    }
+}
+
 allure {
     autoconfigure = true
     aspectjweaver = true
