@@ -19,7 +19,6 @@ pipeline {
                 sh "./gradlew restTests"
             }
         }
-
          stage('web tests') {
                     when {
                         expression {return params.web}
