@@ -1,6 +1,8 @@
 pipeline {
-    agent {
-        label 'gradle'
+    agent any
+
+    tools {
+        gradle "7.1"
     }
 
     parameters{

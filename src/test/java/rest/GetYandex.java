@@ -1,14 +1,19 @@
 package rest;
 
 import io.restassured.http.ContentType;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
 
 public class GetYandex {
 
+    static Logger log = LogManager.getLogger(GetYandex.class);
+
     @Test
     public void getUsers() {
+        log.info("Start getUsers test EVG");
         given()
                 .baseUri("https://reqres.in/api")
                 .basePath("/users/2")
