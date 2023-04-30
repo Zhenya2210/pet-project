@@ -6,8 +6,8 @@ pipeline {
     }
 
     parameters{
-        booleanParams(defaultValue: true, description: 'run rest tests', name: 'rest')
-        booleanParams(defaultValue: true, description: 'run web tests', name: 'web')
+        booleanParam(defaultValue: true, description: 'run rest tests', name: 'rest')
+        booleanParam(defaultValue: true, description: 'run web tests', name: 'web')
     }
 
     stages {
