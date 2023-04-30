@@ -32,7 +32,7 @@ pipeline {
     post {
         always {
             allure([
-                reportBuildPolice: 'ALWAYS',
+                reportBuildPolicy: 'ALWAYS',
                 results: [[path: 'build/allure-results']]
             ])
         }
