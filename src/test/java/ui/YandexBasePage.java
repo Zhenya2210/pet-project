@@ -10,6 +10,6 @@ public class YandexBasePage {
     @Test
     public void openMainPage() {
         open("https://dzen.ru/");
-        $x("//div[text()='Видео']").shouldBe(Condition.visible);
+        $x("//button[@class='dzen-search-arrow-common__button']").shouldBe(Condition.visible);
     }
 }
