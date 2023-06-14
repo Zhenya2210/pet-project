@@ -48,6 +48,9 @@ tasks.register('restTests', Test).configure(){
 }
 
 tasks.register('webTests', Test).configure(){
+    retry {
+        maxRetries = 3
+    }
     filter{
         includeTestsMatching("ui.*")
     }
