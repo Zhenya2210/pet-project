@@ -8,8 +8,8 @@ pipeline {
     parameters{
         booleanParam(defaultValue: false, description: 'run rest tests', name: 'rest')
         booleanParam(defaultValue: true, description: 'run web tests', name: 'web')
-        stringParam(defaultValue:'chrome', description: 'run web tests via specific browser', name: 'browser')
-        stringParam(defaultValue:'112.0', description: 'run web tests via specific version', name: 'version')
+        choice(choices: ['chrome', 'firefox'], description: 'run web tests via specific browser', name: 'browser')
+        string(defaultValue:'', description: 'run web tests via specific version', name: 'version')
     }
 
     stages {
@@ -26,7 +26,7 @@ pipeline {
                         expression {return params.web}
                     }
                     steps {
-                        sh "./gradlew webTests -Pbrowser=params.browser -PbrowserVersion=params.version"
+                        sh "./gradlew webTests -Pbrowser=${params.browser} -PbrowserVersion=${params.version}"
                     }
          }
     }
